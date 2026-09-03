@@ -1,0 +1,175 @@
+/* --- Global Styles & CSS Variables --- */
+:root {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --border-color: #e2e8f0;
+  --danger: #ef4444;
+  --warning-bg: #fef3c7;
+  --warning-text: #92400e;
+  --radius: 8px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+}
+
+/* --- Sidebar Navigation --- */
+.sidebar {
+  width: 240px;
+  background-color: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  color: var(--accent);
+  padding-left: 0.5rem;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+}
+
+.nav-btn.active {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+/* --- Main Content Layout --- */
+.content {
+  flex: 1;
+  padding: 2.5rem;
+  overflow-y: auto;
+}
+
+.app-section {
+  display: none;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.app-section.active {
+  display: flex;
+}
+
+/* --- Dashboard Metric Cards --- */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+}
+
+.card h3 {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* --- Alerts & Banners --- */
+.alert-banner {
+  background-color: var(--warning-bg);
+  color: var(--warning-text);
+  padding: 1rem;
+  border-radius: var(--radius);
+  border-left: 4px solid #f59e0b;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* --- Forms --- */
+.form-card {
+  background-color: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.form-card h3 {
+  width: 100%;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.form-card input,
+.form-card select {
+  flex: 1;
+  min-width: 180px;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.form-card input:focus,
+.form-card select:focus {
+  border-color: var(--accent);
+}
+
+btn-primary {
+  background-color: var(--accent);
+  color: #ffffff52;
+  border: none;
+  padding: 0.625rem 1.25rem
+}
