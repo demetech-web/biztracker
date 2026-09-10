@@ -28,6 +28,32 @@ body {
   color: var(--text-main);
 }
 
+/* --- Mobile Top Navigation Bar --- */
+.mobile-header {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  width: 100%;
+}
+
+.mobile-header h2 {
+  font-size: 1.25rem;
+  color: var(--accent);
+}
+
+.menu-toggle {
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 0.25rem 0.6rem;
+  font-size: 1.25rem;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
 /* --- Sidebar Navigation --- */
 .sidebar {
   width: 240px;
@@ -37,6 +63,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  flex-shrink: 0;
 }
 
 .sidebar h2 {
@@ -167,9 +194,104 @@ body {
   border-color: var(--accent);
 }
 
-btn-primary {
+.btn-primary {
   background-color: var(--accent);
-  color: #ffffff52;
+  color: #ffffff;
   border: none;
-  padding: 0.625rem 1.25rem
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+}
+
+/* --- Tables --- */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.875rem 1.25rem;
+  text-align: left;
+}
+
+.data-table th {
+  background-color: #f1f5f9;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.data-table tr:not(:last-child) {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.btn-delete {
+  background-color: transparent;
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.btn-delete:hover {
+  background-color: var(--danger);
+  color: #ffffff;
+}
+
+/* --- Mobile Responsive Overrides --- */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .mobile-header {
+    display: flex;
+  }
+
+  .sidebar {
+    display: none;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .sidebar h2 {
+    display: none;
+  }
+
+  .sidebar.open {
+    display: flex;
+  }
+
+  .content {
+    padding: 1.25rem;
+  }
+
+  .form-card input,
+  .form-card select,
+  .btn-primary {
+    width: 100%;
+  }
+
+  .data-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 }
