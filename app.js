@@ -14,7 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('sale-form').addEventListener('submit', handleRecordSale);
   document.getElementById('expense-form').addEventListener('submit', handleAddExpense);
 });
-
+// --- Mobile Sidebar Toggle ---
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  sidebar.classList.toggle('open');
+}
 // --- Navigation ---
 function showSection(sectionId) {
   // Hide all sections
@@ -33,7 +37,10 @@ function showSection(sectionId) {
   const activeBtn = Array.from(document.querySelectorAll('.nav-btn')).find(btn => 
     btn.getAttribute('onclick').includes(sectionId)
   );
-  if (activeBtn) activeBtn.classList.add('active');
+ if (activeBtn) activeBtn.classList.add('active');
+
+  const sidebar = document.getElementById('sidebar');
+  if (sidebar) sidebar.classList.remove('open');
 }
 
 // --- Local Storage Helpers ---
