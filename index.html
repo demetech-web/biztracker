@@ -7,8 +7,14 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Mobile Header (Contains the ☰ Hamburger Button) -->
+  <header class="mobile-header">
+    <h2>BizTracker</h2>
+    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+  </header>
+
   <!-- Sidebar Navigation -->
-  <aside class="sidebar">
+  <aside class="sidebar" id="sidebar">
     <h2>BizTracker</h2>
     <nav>
       <button class="nav-btn active" onclick="showSection('dashboard')">📊 Dashboard</button>
@@ -19,8 +25,8 @@
 
     <!-- Reset Data Button -->
     <button class="btn-delete" style="margin-top: auto; padding: 0.75rem;" onclick="resetAllData()">
-  🗑️ Reset Sales & Expenses
-</button>
+      🗑️ Reset Sales & Expenses
+    </button>
   </aside>
 
   <!-- Main Content Area -->
@@ -38,15 +44,15 @@
       <div class="metrics-grid">
         <div class="card">
           <h3>Total Revenue</h3>
-          <p id="total-revenue">$0.00</p>
+          <p id="total-revenue">₦0.00</p>
         </div>
         <div class="card">
           <h3>Total Expenses</h3>
-          <p id="total-expenses">$0.00</p>
+          <p id="total-expenses">₦0.00</p>
         </div>
         <div class="card">
           <h3>Net Profit</h3>
-          <p id="total-profit">$0.00</p>
+          <p id="total-profit">₦0.00</p>
         </div>
         <div class="card">
           <h3>Products Sold</h3>
